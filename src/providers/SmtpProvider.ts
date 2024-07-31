@@ -4,35 +4,51 @@ import { EmailProvider } from "../interfaces/EmailProvider";
 
 export class SmtpProvider implements EmailProvider {
   private transporter: Transporter;
+  private port: number;
+  private user: string;
+  private pass: string;
+  private from: string;
+  private host: string;
 
   constructor() {
-    const host = process.env.SMTP_HOST;
-    const port = Number(process.env.SMTP_PORT);
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-    const from = process.env.SMTP_FROM;
+    this.host = process.env.SMTP_HOST!;
+    this.port = Number(process.env.SMTP_PORT);
+    this.user = process.env.SMTP_USER!;
+    this.pass = process.env.SMTP_PASS!;
+    this.from = process.env.SMTP_FROM!;
 
-    if (!host || !port || !user || !pass || !from) {
-      throw new Error("SMTP configuration is incomplete.");
+    if (!this.host) {
+      throw new Error("SMTP host is missing.");
+    }
+    if (!this.port) {
+      throw new Error("SMTP port is missing.");
+    }
+    if (!this.user) {
+      throw new Error("SMTP user is missing.");
+    }
+    if (!this.pass) {
+      throw new Error("SMTP password is missing.");
+    }
+    if (!this.from) {
+      throw new Error("SMTP sender email address is missing.");
     }
 
     this.transporter = nodemailer.createTransport({
-      host,
-      port,
-      auth: { user, pass },
+      host: this.host,
+      port: this.port,
+      auth: { user: this.user, pass: this.pass },
     });
   }
 
   async sendEmail(to: string, subject: string, body: string): Promise<void> {
     try {
       await this.transporter.sendMail({
-        from: process.env.SMTP_FROM!,
+        from: this.from,
         to,
         subject,
         text: body,
       });
     } catch (error) {
-      console.error("Failed to send email via SMTP:", error);
       throw new Error("Email sending failed.");
     }
   }
