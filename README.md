@@ -1,4 +1,4 @@
-# flexi-mail
+# flexi-mailer
 
 A versatile email service supporting multiple providers, including SMTP, AWS SES, Mailgun, Postmark, and SendGrid.
 
@@ -14,7 +14,7 @@ A versatile email service supporting multiple providers, including SMTP, AWS SES
 To install the package, use npm:
 
 ```bash
-npm install flexi-mail
+npm install flexi-mailer
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ SENDGRID_FROM=no-reply@example.com
 ### Example
 
 ```typescript
-import { EmailService, ProviderType } from 'flexi-mail';
+import { EmailService, ProviderType } from 'flexi-mailer';
 
 // Create an instance of EmailService with the desired provider
 const emailService = new EmailService(ProviderType.smtp);
@@ -100,7 +100,7 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## Issues
 
-If you encounter any issues, please [open an issue](https://github.com/lijukrks/flexi-mail/issues) on GitHub.
+If you encounter any issues, please [open an issue](https://github.com/lijukrks/flexi-mailer/issues) on GitHub.
 
 ## Maintainers
 
