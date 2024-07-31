@@ -1,5 +1,9 @@
+import * as dotenv from 'dotenv';
+
 import { EmailProvider } from "./interfaces/EmailProvider";
 import { EmailProviderFactory } from "./EmailProviderFactory";
+
+dotenv.config();
 
 export class EmailService {
   private provider: EmailProvider;
