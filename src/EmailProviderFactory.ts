@@ -6,19 +6,19 @@ import { SendGridProvider } from "./providers/SendGridProvider";
 import { SmtpProvider } from "./providers/SmtpProvider";
 
 export class EmailProviderFactory {
+  private static providerMap: { [key: string]: () => EmailProvider } = {
+    smtp: () => new SmtpProvider(),
+    sendgrid: () => new SendGridProvider(),
+    mailgun: () => new MailgunProvider(),
+    ses: () => new AmazonSesProvider(),
+    postmark: () => new PostmarkProvider(),
+  };
+
   static createProvider(providerName: string): EmailProvider {
-    switch (providerName) {
-      case "smtp":
-        return new SmtpProvider();
-      case "sendgrid":
-        return new SendGridProvider();
-      case "mailgun":
-        return new MailgunProvider();
-      case "ses":
-        return new AmazonSesProvider();
-      case "postmark":
-        return new PostmarkProvider();
-      default:
-        throw new Error(`Unsupported email provider: ${providerName}`);
-    }  }
+    const provider = this.providerMap[providerName.toLowerCase()];
+    if (!provider) {
+      throw new Error(`Unsupported email provider: ${providerName}`);
+    }
+    return provider();
+  }
 }
