@@ -5,17 +5,25 @@ import { PostmarkProvider } from "./providers/PostmarkProvider";
 import { SendGridProvider } from "./providers/SendGridProvider";
 import { SmtpProvider } from "./providers/SmtpProvider";
 
+export enum ProviderType {
+  smtp = "smtp",
+  sendGrid = "sendGrid",
+  mailGun = "mailGun",
+  postmark = "postmark",
+  ses = "ses",
+}
+
 export class EmailProviderFactory {
-  private static providerMap: { [key: string]: () => EmailProvider } = {
-    smtp: () => new SmtpProvider(),
-    sendgrid: () => new SendGridProvider(),
-    mailgun: () => new MailgunProvider(),
-    ses: () => new AmazonSesProvider(),
-    postmark: () => new PostmarkProvider(),
+  private static providerMap: { [key in ProviderType]: () => EmailProvider } = {
+    [ProviderType.smtp]: () => new SmtpProvider(),
+    [ProviderType.sendGrid]: () => new SendGridProvider(),
+    [ProviderType.mailGun]: () => new MailgunProvider(),
+    [ProviderType.ses]: () => new AmazonSesProvider(),
+    [ProviderType.postmark]: () => new PostmarkProvider(),
   };
 
-  static createProvider(providerName: string): EmailProvider {
-    const provider = this.providerMap[providerName.toLowerCase()];
+  static createProvider(providerName: ProviderType): EmailProvider {
+    const provider = this.providerMap[providerName];
     if (!provider) {
       throw new Error(`Unsupported email provider: ${providerName}`);
     }

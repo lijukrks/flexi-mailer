@@ -1,14 +1,15 @@
 import * as dotenv from 'dotenv';
 
+import { EmailProviderFactory, ProviderType } from "./EmailProviderFactory";
+
 import { EmailProvider } from "./interfaces/EmailProvider";
-import { EmailProviderFactory } from "./EmailProviderFactory";
 
 dotenv.config();
 
 export class EmailService {
   private provider: EmailProvider;
 
-  constructor(providerName: string) {
+  constructor(providerName: ProviderType) {
     this.provider = EmailProviderFactory.createProvider(providerName);
   }
 
