@@ -67,6 +67,7 @@ emailService.sendEmail('recipient@example.com', 'Test Subject', 'Test Body')
 ## Environment Variables
 
 ### SMTP
+
 - `SMTP_HOST`: SMTP server host.
 - `SMTP_PORT`: SMTP server port.
 - `SMTP_USER`: SMTP server username.
@@ -74,19 +75,23 @@ emailService.sendEmail('recipient@example.com', 'Test Subject', 'Test Body')
 - `SMTP_FROM`: Sender email address.
 
 ### AWS SES
+
 - `AWS_REGION`: AWS region.
 - `AWS_SOURCE_EMAIL`: Source email address for sending emails.
 
 ### Mailgun
+
 - `MAILGUN_API_KEY`: Mailgun API key.
 - `MAILGUN_DOMAIN`: Mailgun domain.
 - `MAILGUN_FROM`: Sender email address.
 
 ### Postmark
+
 - `POSTMARK_API_KEY`: Postmark API key.
 - `POSTMARK_FROM`: Sender email address.
 
 ### SendGrid
+
 - `SENDGRID_API_KEY`: SendGrid API key.
 - `SENDGRID_FROM`: Sender email address.
 
