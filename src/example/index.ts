@@ -1,5 +1,4 @@
-import { EmailService } from "../EmailService";
-import { ProviderType } from "../EmailProviderFactory";
+import { EmailService, ProviderType } from "../lib";
 
 const emailService = new EmailService(ProviderType.smtp);
 

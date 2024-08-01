@@ -1,8 +1,8 @@
 import * as dotenv from 'dotenv';
 
-import { EmailProviderFactory, ProviderType } from "./EmailProviderFactory";
+import { EmailProvider, ProviderType } from '../types';
 
-import { EmailProvider } from "./interfaces/EmailProvider";
+import { EmailProviderFactory } from "./EmailProviderFactory";
 
 dotenv.config();
 

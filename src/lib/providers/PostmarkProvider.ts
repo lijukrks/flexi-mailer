@@ -1,4 +1,4 @@
-import { EmailProvider } from "../interfaces/EmailProvider";
+import { EmailProvider } from "../types";
 import { ServerClient } from "postmark";
 
 export class PostmarkProvider implements EmailProvider {
