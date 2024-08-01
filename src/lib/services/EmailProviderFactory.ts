@@ -1,17 +1,10 @@
-import { AmazonSesProvider } from "./providers/AmazonSesProvider";
-import { EmailProvider } from "./interfaces/EmailProvider";
-import { MailgunProvider } from "./providers/MailgunProvider";
-import { PostmarkProvider } from "./providers/PostmarkProvider";
-import { SendGridProvider } from "./providers/SendGridProvider";
-import { SmtpProvider } from "./providers/SmtpProvider";
+import { EmailProvider, ProviderType } from "../types";
 
-export enum ProviderType {
-  smtp = "smtp",
-  sendGrid = "sendGrid",
-  mailGun = "mailGun",
-  postmark = "postmark",
-  ses = "ses",
-}
+import { AmazonSesProvider } from "../providers/AmazonSesProvider";
+import { MailgunProvider } from "../providers/MailgunProvider";
+import { PostmarkProvider } from "../providers/PostmarkProvider";
+import { SendGridProvider } from "../providers/SendGridProvider";
+import { SmtpProvider } from "../providers/SmtpProvider";
 
 export class EmailProviderFactory {
   private static providerMap: { [key in ProviderType]: () => EmailProvider } = {

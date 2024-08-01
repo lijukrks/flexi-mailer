@@ -1,4 +1,4 @@
-import { EmailProvider } from "../interfaces/EmailProvider";
+import { EmailProvider } from "../types";
 import sgMail from "@sendgrid/mail";
 
 export class SendGridProvider implements EmailProvider {

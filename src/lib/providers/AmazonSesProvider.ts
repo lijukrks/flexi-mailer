@@ -1,5 +1,5 @@
 import AWS from "aws-sdk";
-import { EmailProvider } from "../interfaces/EmailProvider";
+import { EmailProvider } from "../types";
 
 export class AmazonSesProvider implements EmailProvider {
   private ses: AWS.SES;

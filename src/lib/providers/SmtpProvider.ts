@@ -1,6 +1,6 @@
 import nodemailer, { Transporter } from "nodemailer";
 
-import { EmailProvider } from "../interfaces/EmailProvider";
+import { EmailProvider } from "../types";
 
 export class SmtpProvider implements EmailProvider {
   private transporter: Transporter;

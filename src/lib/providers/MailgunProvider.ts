@@ -1,4 +1,4 @@
-import { EmailProvider } from "../interfaces/EmailProvider";
+import { EmailProvider } from "../types";
 import mailgun from "mailgun-js";
 
 export class MailgunProvider implements EmailProvider {
