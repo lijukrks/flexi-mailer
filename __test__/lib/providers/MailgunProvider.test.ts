@@ -1,4 +1,4 @@
-import { MailgunProvider } from "./MailgunProvider";
+import { MailgunProvider } from "../../../src/lib/providers/MailgunProvider";
 import mailgun from "mailgun-js";
 
 jest.mock("mailgun-js");

@@ -1,4 +1,4 @@
-import { PostmarkProvider } from "./PostmarkProvider";
+import { PostmarkProvider } from "../../../src/lib/providers/PostmarkProvider";
 import { ServerClient } from "postmark";
 
 jest.mock("postmark");

@@ -1,4 +1,4 @@
-import { SendGridProvider } from "./SendGridProvider";
+import { SendGridProvider } from "../../../src/lib/providers/SendGridProvider";
 import sgMail from "@sendgrid/mail";
 
 jest.mock("@sendgrid/mail");

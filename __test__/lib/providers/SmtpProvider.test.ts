@@ -1,4 +1,4 @@
-import { SmtpProvider } from "./SmtpProvider";
+import { SmtpProvider } from "../../../src/lib/providers/SmtpProvider";
 import nodemailer from "nodemailer";
 
 jest.mock("nodemailer");

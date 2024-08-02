@@ -1,5 +1,5 @@
 import AWS from "aws-sdk";
-import { AmazonSesProvider } from "./AmazonSesProvider";
+import { AmazonSesProvider } from "../../../src/lib/providers/AmazonSesProvider";
 
 jest.mock("aws-sdk");
 
