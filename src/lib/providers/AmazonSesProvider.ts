@@ -38,7 +38,7 @@ export class AmazonSesProvider implements EmailProvider {
           },
         })
         .promise();
-    } catch (error) {
+    } catch (_error) {
       throw new Error('Email sending failed.');
     }
   }

@@ -24,7 +24,7 @@ export class SendGridProvider implements EmailProvider {
         subject,
         text: body,
       });
-    } catch (error) {
+    } catch (_error) {
       throw new Error('Email sending failed.');
     }
   }

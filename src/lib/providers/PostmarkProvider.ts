@@ -26,7 +26,7 @@ export class PostmarkProvider implements EmailProvider {
         Subject: subject,
         TextBody: body,
       });
-    } catch (error) {
+    } catch (_error) {
       throw new Error('Email sending failed.');
     }
   }

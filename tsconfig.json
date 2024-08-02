@@ -105,6 +105,11 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["src/**/*.ts", "eslint.config.mjs", "__test__/**/*","jest.config.js"],
+  "include": [
+    "src/**/*.ts",
+    "__test__/**/*",
+    "jest.config.js",
+    "eslint.config.mjs"
+  ],
   "exclude": ["node_modules", "dist"]
 }
