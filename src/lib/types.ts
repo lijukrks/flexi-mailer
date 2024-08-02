@@ -1,9 +1,9 @@
 export enum ProviderType {
-  smtp = "smtp",
-  sendGrid = "sendGrid",
-  mailGun = "mailGun",
-  postmark = "postmark",
-  ses = "ses",
+  smtp = 'smtp',
+  sendGrid = 'sendGrid',
+  mailGun = 'mailGun',
+  postmark = 'postmark',
+  ses = 'ses',
 }
 
 export interface EmailProvider {

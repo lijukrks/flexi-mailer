@@ -1,5 +1,5 @@
-import { EmailProvider } from "../types";
-import sgMail from "@sendgrid/mail";
+import { EmailProvider } from '../types';
+import sgMail from '@sendgrid/mail';
 
 export class SendGridProvider implements EmailProvider {
   private apiKey: string;
@@ -9,10 +9,10 @@ export class SendGridProvider implements EmailProvider {
     this.from = process.env.SENDGRID_FROM!;
 
     if (!this.apiKey) {
-      throw new Error("Missing SendGrid API key is missing.");
+      throw new Error('Missing SendGrid API key is missing.');
     }
     if (!this.from) {
-      throw new Error("SendGrid sender email address is missing.");
+      throw new Error('SendGrid sender email address is missing.');
     }
     sgMail.setApiKey(this.apiKey);
   }
@@ -25,7 +25,7 @@ export class SendGridProvider implements EmailProvider {
         text: body,
       });
     } catch (error) {
-      throw new Error("Email sending failed.");
+      throw new Error('Email sending failed.');
     }
   }
 }

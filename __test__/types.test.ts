@@ -1,4 +1,4 @@
-import { ProviderType } from "../src/lib";
+import { ProviderType } from '../src/lib';
 
 describe('ProviderType Enum', () => {
   test('should have correct enum values', () => {

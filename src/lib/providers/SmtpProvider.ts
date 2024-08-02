@@ -1,6 +1,6 @@
-import nodemailer, { Transporter } from "nodemailer";
+import nodemailer, { Transporter } from 'nodemailer';
 
-import { EmailProvider } from "../types";
+import { EmailProvider } from '../types';
 
 export class SmtpProvider implements EmailProvider {
   private transporter: Transporter;
@@ -18,19 +18,19 @@ export class SmtpProvider implements EmailProvider {
     this.from = process.env.SMTP_FROM!;
 
     if (!this.host) {
-      throw new Error("SMTP host is missing.");
+      throw new Error('SMTP host is missing.');
     }
     if (!this.port) {
-      throw new Error("SMTP port is missing.");
+      throw new Error('SMTP port is missing.');
     }
     if (!this.user) {
-      throw new Error("SMTP user is missing.");
+      throw new Error('SMTP user is missing.');
     }
     if (!this.pass) {
-      throw new Error("SMTP password is missing.");
+      throw new Error('SMTP password is missing.');
     }
     if (!this.from) {
-      throw new Error("SMTP sender email address is missing.");
+      throw new Error('SMTP sender email address is missing.');
     }
 
     this.transporter = nodemailer.createTransport({
@@ -49,7 +49,7 @@ export class SmtpProvider implements EmailProvider {
         text: body,
       });
     } catch (error) {
-      throw new Error("Email sending failed.");
+      throw new Error('Email sending failed.');
     }
   }
 }

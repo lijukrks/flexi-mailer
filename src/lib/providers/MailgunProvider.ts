@@ -1,5 +1,5 @@
-import { EmailProvider } from "../types";
-import mailgun from "mailgun-js";
+import { EmailProvider } from '../types';
+import mailgun from 'mailgun-js';
 
 export class MailgunProvider implements EmailProvider {
   private mg: mailgun.Mailgun;
@@ -13,15 +13,15 @@ export class MailgunProvider implements EmailProvider {
     this.from = process.env.MAILGUN_FROM!;
 
     if (!this.apiKey) {
-      throw new Error("Mailgun API key is missing.");
+      throw new Error('Mailgun API key is missing.');
     }
 
     if (!this.domain) {
-      throw new Error("Mailgun domain is missing.");
+      throw new Error('Mailgun domain is missing.');
     }
 
     if (!this.from) {
-      throw new Error("Mailgun sender email address is missing.");
+      throw new Error('Mailgun sender email address is missing.');
     }
 
     this.mg = mailgun({ apiKey: this.apiKey, domain: this.domain });
@@ -36,7 +36,7 @@ export class MailgunProvider implements EmailProvider {
         text: body,
       });
     } catch (error) {
-      throw new Error("Email sending failed.");
+      throw new Error('Email sending failed.');
     }
   }
 }

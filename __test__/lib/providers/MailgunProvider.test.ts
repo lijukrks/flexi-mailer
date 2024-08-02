@@ -1,9 +1,9 @@
-import { MailgunProvider } from "../../../src/lib/providers/MailgunProvider";
-import mailgun from "mailgun-js";
+import { MailgunProvider } from '../../../src/lib/providers/MailgunProvider';
+import mailgun from 'mailgun-js';
 
-jest.mock("mailgun-js");
+jest.mock('mailgun-js');
 
-describe("MailgunProvider", () => {
+describe('MailgunProvider', () => {
   let mailgunProvider: MailgunProvider;
   const originalEnv = process.env;
   let sendMailMock: jest.Mock;
@@ -18,9 +18,9 @@ describe("MailgunProvider", () => {
       }),
     }));
 
-    process.env.MAILGUN_API_KEY = "fake-api-key";
-    process.env.MAILGUN_DOMAIN = "fake-domain.com";
-    process.env.MAILGUN_FROM = "sender@example.com";
+    process.env.MAILGUN_API_KEY = 'fake-api-key';
+    process.env.MAILGUN_DOMAIN = 'fake-domain.com';
+    process.env.MAILGUN_FROM = 'sender@example.com';
 
     mailgunProvider = new MailgunProvider();
   });
@@ -30,38 +30,48 @@ describe("MailgunProvider", () => {
     jest.resetAllMocks();
   });
 
-  test("should throw error if MAILGUN_API_KEY is missing", () => {
+  test('should throw error if MAILGUN_API_KEY is missing', () => {
     delete process.env.MAILGUN_API_KEY;
-    expect(() => new MailgunProvider()).toThrow("Mailgun API key is missing.");
+    expect(() => new MailgunProvider()).toThrow('Mailgun API key is missing.');
   });
 
-  test("should throw error if MAILGUN_DOMAIN is missing", () => {
+  test('should throw error if MAILGUN_DOMAIN is missing', () => {
     delete process.env.MAILGUN_DOMAIN;
-    expect(() => new MailgunProvider()).toThrow("Mailgun domain is missing.");
+    expect(() => new MailgunProvider()).toThrow('Mailgun domain is missing.');
   });
 
-  test("should throw error if MAILGUN_FROM is missing", () => {
+  test('should throw error if MAILGUN_FROM is missing', () => {
     delete process.env.MAILGUN_FROM;
-    expect(() => new MailgunProvider()).toThrow("Mailgun sender email address is missing.");
+    expect(() => new MailgunProvider()).toThrow(
+      'Mailgun sender email address is missing.',
+    );
   });
 
-  test("should send an email successfully", async () => {
+  test('should send an email successfully', async () => {
     sendMailMock.mockResolvedValueOnce({});
-    await mailgunProvider.sendEmail("recipient@example.com", "Test Subject", "Test Body");
+    await mailgunProvider.sendEmail(
+      'recipient@example.com',
+      'Test Subject',
+      'Test Body',
+    );
 
     expect(sendMailMock).toHaveBeenCalledTimes(1);
     expect(sendMailMock).toHaveBeenCalledWith({
-      from: "sender@example.com",
-      to: "recipient@example.com",
-      subject: "Test Subject",
-      text: "Test Body",
+      from: 'sender@example.com',
+      to: 'recipient@example.com',
+      subject: 'Test Subject',
+      text: 'Test Body',
     });
   });
 
-  test("should throw an error when email sending fails", async () => {
-    sendMailMock.mockRejectedValueOnce(new Error("Mailgun Error"));
+  test('should throw an error when email sending fails', async () => {
+    sendMailMock.mockRejectedValueOnce(new Error('Mailgun Error'));
     await expect(
-      mailgunProvider.sendEmail("recipient@example.com", "Test Subject", "Test Body")
-    ).rejects.toThrow("Email sending failed.");
+      mailgunProvider.sendEmail(
+        'recipient@example.com',
+        'Test Subject',
+        'Test Body',
+      ),
+    ).rejects.toThrow('Email sending failed.');
   });
 });
