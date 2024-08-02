@@ -1,6 +1,9 @@
 # Node.js dependencies
 node_modules/
 
+# test coverage
+coverage/
+
 # Environment variables
 .env
 
