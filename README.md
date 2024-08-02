@@ -51,9 +51,10 @@ import { EmailService, ProviderType } from 'flexi-mailer';
 const emailService = new EmailService(ProviderType.smtp);
 
 // Send an email
-emailService.sendEmail('recipient@example.com', 'Test Subject', 'Test Body')
+emailService
+  .sendEmail('recipient@example.com', 'Test Subject', 'Test Body')
   .then(() => console.log('Email sent successfully'))
-  .catch(error => console.error('Failed to send email:', error));
+  .catch((error) => console.error('Failed to send email:', error));
 ```
 
 ## Supported Providers

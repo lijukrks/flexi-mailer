@@ -1,7 +1,7 @@
-import { EmailProvider } from "../../../src/lib/types";
-import { EmailProviderFactory } from "../../../src/lib/services/EmailProviderFactory";
-import { EmailService } from "../../../src/lib/services/EmailService";
-import { ProviderType } from "../../../src/lib";
+import { EmailProvider } from '../../../src/lib/types';
+import { EmailProviderFactory } from '../../../src/lib/services/EmailProviderFactory';
+import { EmailService } from '../../../src/lib/services/EmailService';
+import { ProviderType } from '../../../src/lib';
 
 jest.mock('../../../src/lib/services/EmailProviderFactory');
 jest.mock('../../../src/lib/providers/SmtpProvider');
@@ -18,7 +18,9 @@ describe('EmailService', () => {
       sendEmail: jest.fn(),
     };
 
-    (EmailProviderFactory.createProvider as jest.Mock).mockReturnValue(mockProvider);
+    (EmailProviderFactory.createProvider as jest.Mock).mockReturnValue(
+      mockProvider,
+    );
   });
 
   afterEach(() => {
@@ -36,7 +38,9 @@ describe('EmailService', () => {
   providerTypes.forEach((providerType) => {
     test(`should create an instance of EmailService with ${providerType} provider`, () => {
       const emailService = new EmailService(providerType);
-      expect(EmailProviderFactory.createProvider).toHaveBeenCalledWith(providerType);
+      expect(EmailProviderFactory.createProvider).toHaveBeenCalledWith(
+        providerType,
+      );
       expect(emailService).toBeInstanceOf(EmailService);
     });
 
@@ -52,11 +56,15 @@ describe('EmailService', () => {
     });
 
     test(`should throw an error if sending email fails for ${providerType}`, async () => {
-      mockProvider.sendEmail.mockRejectedValueOnce(new Error('Email sending failed'));
+      mockProvider.sendEmail.mockRejectedValueOnce(
+        new Error('Email sending failed'),
+      );
 
       const emailService = new EmailService(providerType);
 
-      await expect(emailService.sendEmail('test@example.com', 'Subject', 'Body')).rejects.toThrow('Email sending failed');
+      await expect(
+        emailService.sendEmail('test@example.com', 'Subject', 'Body'),
+      ).rejects.toThrow('Email sending failed');
     });
   });
 });

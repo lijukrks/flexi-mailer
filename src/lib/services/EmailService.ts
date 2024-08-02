@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 
 import { EmailProvider, ProviderType } from '../types';
 
-import { EmailProviderFactory } from "./EmailProviderFactory";
+import { EmailProviderFactory } from './EmailProviderFactory';
 
 dotenv.config();
 

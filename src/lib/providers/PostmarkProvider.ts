@@ -1,5 +1,5 @@
-import { EmailProvider } from "../types";
-import { ServerClient } from "postmark";
+import { EmailProvider } from '../types';
+import { ServerClient } from 'postmark';
 
 export class PostmarkProvider implements EmailProvider {
   private client: ServerClient;
@@ -10,10 +10,10 @@ export class PostmarkProvider implements EmailProvider {
     this.apiKey = process.env.POSTMARK_API_KEY!;
     this.from = process.env.POSTMARK_FROM!;
     if (!this.apiKey) {
-      throw new Error("Postmark API key is missing.");
+      throw new Error('Postmark API key is missing.');
     }
     if (!this.from) {
-      throw new Error("Postmark sender email address is missing.");
+      throw new Error('Postmark sender email address is missing.');
     }
     this.client = new ServerClient(this.apiKey);
   }
@@ -26,8 +26,8 @@ export class PostmarkProvider implements EmailProvider {
         Subject: subject,
         TextBody: body,
       });
-    } catch (error) {
-      throw new Error("Email sending failed.");
+    } catch (_error) {
+      throw new Error('Email sending failed.');
     }
   }
 }

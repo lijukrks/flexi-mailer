@@ -1,5 +1,5 @@
-import { EmailService } from "../src/lib";
-import { ProviderType } from "../src/lib";
+import { EmailService } from '../src/lib';
+import { ProviderType } from '../src/lib';
 
 describe('Module Exports', () => {
   test('should export EmailService', () => {
