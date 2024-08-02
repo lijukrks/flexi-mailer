@@ -24,6 +24,7 @@ export default [
     'prettier',
   ),
   {
+    env: { node: true },
     plugins: {
       '@typescript-eslint': typescriptEslint,
       prettier,
