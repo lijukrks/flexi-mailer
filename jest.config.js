@@ -5,7 +5,7 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
   collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts'],
-  coverageReporters: ['json', 'html', 'text'],
+  coverageReporters: ['cobertura', 'text'],
   testPathIgnorePatterns: ['/node_modules/'],
   roots: ['<rootDir>/__test__/'],
   moduleFileExtensions: ['ts', 'js'],
