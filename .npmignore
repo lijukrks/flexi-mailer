@@ -1,0 +1,51 @@
+# Exclude source files
+src/
+
+# Exclude TypeScript configuration
+tsconfig.json
+tslint.json
+
+# Exclude test files
+__test__/
+*.test.ts
+*.spec.ts
+
+# Exclude documentation and config files
+README.md
+*.md
+*.yaml
+*.yml
+
+# test coverage
+coverage/
+
+# Environment variables
+.env
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+
+# MacOS Finder metadata
+*.DS_Store
+
+# Windows file system
+Desktop.ini
+
+.husky/
+
+eslint.config.mjs
+jest.config.js
+release.config.mjs
+.prettierrc
