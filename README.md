@@ -1,5 +1,6 @@
 # flexi-mailer
 [![codecov](https://codecov.io/github/lijukrks/flexi-mailer/branch/main/graph/badge.svg?token=AOO9ICAYFH)](https://codecov.io/github/lijukrks/flexi-mailer)
+
 A versatile email service supporting multiple providers, including SMTP, AWS SES, Mailgun, Postmark, and SendGrid.
 
 ## Features
