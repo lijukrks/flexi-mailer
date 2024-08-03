@@ -26,10 +26,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# NPM/Yarn lock files (optional)
-package-lock.json
-yarn.lock
-
 # MacOS Finder metadata
 *.DS_Store
 
