@@ -59,6 +59,6 @@ export default [
     },
   },
   {
-    ignores: ['eslint.config.mjs', 'jest.config.js'],
+    ignores: ['eslint.config.mjs', 'jest.config.js','release.config.mjs'],
   },
 ];
