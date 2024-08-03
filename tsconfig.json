@@ -109,7 +109,8 @@
     "src/**/*.ts",
     "__test__/**/*",
     "jest.config.js",
-    "eslint.config.mjs"
+    "eslint.config.mjs",
+    "release.config.mjs"
   ],
   "exclude": ["node_modules", "dist"]
 }
