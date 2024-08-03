@@ -14,13 +14,16 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x] # Define the Node.js versions to test against
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm clean-install
       - name: Run lint
@@ -29,13 +32,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: lint
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x] # Define the Node.js versions to test against
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm clean-install
       - name: Run tests
@@ -48,10 +54,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
-        contents: write 
-        issues: write 
-        pull-requests: write 
-        id-token: write   
+      contents: write 
+      issues: write 
+      pull-requests: write 
+      id-token: write   
     needs: test
     if: github.ref == 'refs/heads/main'
     steps:
@@ -59,10 +65,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: '22.x' # Use the latest Node.js version for release
       - name: Install dependencies
         run: npm clean-install
       - name: Verify integrity
