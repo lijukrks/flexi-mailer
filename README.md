@@ -1,4 +1,5 @@
 # flexi-mailer
+
 [![codecov](https://codecov.io/github/lijukrks/flexi-mailer/branch/main/graph/badge.svg?token=AOO9ICAYFH)](https://codecov.io/github/lijukrks/flexi-mailer)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/{owner}/{repo}/badge)](https://scorecard.dev/viewer/?uri=github/lijukrks/flexi-mailer)
 
