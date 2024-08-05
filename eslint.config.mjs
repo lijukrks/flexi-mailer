@@ -41,7 +41,6 @@ export default [
         tsconfigRootDir: process.cwd(),
       },
     },
-
     rules: {
       'prettier/prettier': 'error',
       '@typescript-eslint/no-unused-vars': [
@@ -59,6 +58,11 @@ export default [
     },
   },
   {
-    ignores: ['eslint.config.mjs', 'jest.config.js','release.config.mjs'],
+    ignores: [
+      'eslint.config.mjs',
+      'jest.config.js',
+      'release.config.mjs',
+      'commitlint.config.mjs',
+    ],
   },
 ];
