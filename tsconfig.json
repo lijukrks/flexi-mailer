@@ -110,7 +110,8 @@
     "__test__/**/*",
     "jest.config.js",
     "eslint.config.mjs",
-    "release.config.mjs"
+    "release.config.mjs",
+    "commitlint.config.mjs",
   ],
   "exclude": ["node_modules", "dist"]
 }
