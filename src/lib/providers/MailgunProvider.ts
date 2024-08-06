@@ -1,8 +1,10 @@
 import { EmailProvider } from '../types';
-import mailgun from 'mailgun-js';
+import { IMailgunClient } from 'mailgun.js/Interfaces';
+import Mailgun from 'mailgun.js';
+import formData from 'form-data';
 
 export class MailgunProvider implements EmailProvider {
-  private mg: mailgun.Mailgun;
+  private mg: IMailgunClient;
   private apiKey: string;
   private domain: string;
   private from: string;
@@ -24,12 +26,13 @@ export class MailgunProvider implements EmailProvider {
       throw new Error('Mailgun sender email address is missing.');
     }
 
-    this.mg = mailgun({ apiKey: this.apiKey, domain: this.domain });
+    const mailgun = new Mailgun(formData);
+    this.mg = mailgun.client({ username: 'api', key: this.apiKey });
   }
 
   async sendEmail(to: string, subject: string, body: string): Promise<void> {
     try {
-      await this.mg.messages().send({
+      await this.mg.messages.create(this.domain, {
         from: this.from,
         to,
         subject,
