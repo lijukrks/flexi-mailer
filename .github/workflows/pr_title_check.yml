@@ -27,7 +27,7 @@ jobs:
       - name: Install commitlint
         run: |
           npm install @commitlint/{cli,config-conventional}
-          
+
       - name: Lint PR Title with commitlint
         run: |
           echo "${{ github.event.pull_request.title }}" | npx commitlint --verbose

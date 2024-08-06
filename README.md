@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/github/lijukrks/flexi-mailer/graph/badge.svg?token=AOO9ICAYFH)](https://codecov.io/github/lijukrks/flexi-mailer)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/lijukrks/flexi-mailer/badge)](https://scorecard.dev/viewer/?uri=github.com/lijukrks/flexi-mailer)
 [![Maintainability](https://api.codeclimate.com/v1/badges/94b1997209c2c7f68ce0/maintainability)](https://codeclimate.com/github/lijukrks/flexi-mailer/maintainability)
-[![npm version](https://badge.fury.io/js/flexi-mailer.svg)](https://badge.fury.io/js/flexi-mailer)
+[![NPM Version](https://img.shields.io/npm/v/flexi-mailer)](https://www.npmjs.com/package/flexi-mailer)
 [![NPM Downloads](https://img.shields.io/npm/dy/flexi-mailer)](https://www.npmjs.com/package/flexi-mailer)
 [![GitHub License](https://img.shields.io/github/license/lijukrks/flexi-mailer)](https://github.com/lijukrks/flexi-mailer/blob/main/LICENSE)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/lijukrks/flexi-mailer/issues)

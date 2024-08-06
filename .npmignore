@@ -49,3 +49,4 @@ eslint.config.mjs
 jest.config.js
 release.config.mjs
 .prettierrc
+commitlint.config.mjs
