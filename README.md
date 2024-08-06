@@ -9,6 +9,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/lijukrks/flexi-mailer/issues)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/lijukrks/flexi-mailer/main.yml)](https://github.com/lijukrks/flexi-mailer/actions/workflows/main.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flijukrks%2Fflexi-mailer.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flijukrks%2Fflexi-mailer?ref=badge_shield)
 
 A versatile email service supporting multiple providers, including SMTP, AWS SES, Mailgun, Postmark, and SendGrid.
 
@@ -109,6 +110,9 @@ emailService
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/lijukrks/flexi-mailer/blob/main/LICENSE) file for details.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flijukrks%2Fflexi-mailer.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flijukrks%2Fflexi-mailer?ref=badge_large)
 
 ## Contributing
 
