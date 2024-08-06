@@ -1,7 +1,7 @@
 {
   "name": "flexi-mailer",
   "version": "1.0.0",
-  "description": "",
+  "description": "A versatile email service supporting multiple providers, including SMTP, AWS SES, Mailgun, Postmark, and SendGrid.",
   "main": "dist/src/lib/index.js",
   "types": "dist/src/lib/index.d.ts",
   "scripts": {
@@ -22,8 +22,32 @@
       "prettier -w"
     ]
   },
-  "keywords": [],
-  "author": "",
+  "homepage": "https://github.com/lijukrks/flexi-mailer#readme",
+  "bugs": {
+    "url": "https://github.com/lijukrks/flexi-mailer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lijukrks/flexi-mailer.git"
+  },
+  "keywords": [
+    "Email Service",
+    "Node.js",
+    "Email API",
+    "SMTP",
+    "Email Sending",
+    "Email Client",
+    "Typescript",
+    "SMTP",
+    "Flexi-Mail",
+    "Open Source",
+    "Mail Transporter",
+    "SendGrid",
+    "SES",
+    "Mailgun",
+    "Postmark"
+  ],
+  "author": "Liju Kuriakose",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^8.1.3",
