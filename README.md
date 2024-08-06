@@ -1,7 +1,11 @@
 # flexi-mailer
 
-[![codecov](https://codecov.io/github/lijukrks/flexi-mailer/branch/main/graph/badge.svg?token=AOO9ICAYFH)](https://codecov.io/github/lijukrks/flexi-mailer)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/{owner}/{repo}/badge)](https://scorecard.dev/viewer/?uri=github/lijukrks/flexi-mailer)
+![Codecov](https://img.shields.io/codecov/c/github/lijukrks/flexi-mailer)
+![OSSF-Scorecard Score](https://img.shields.io/ossf-scorecard/github.com/lijukrks/flexi-mailer)
+![NPM Version](https://img.shields.io/npm/v/flexi-mailer)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/lijukrks/flexi-mailer/issues)
+![NPM Downloads](https://img.shields.io/npm/dy/flexi-mailer)
+![GitHub License](https://img.shields.io/github/license/lijukrks/flexi-mailer)
 
 A versatile email service supporting multiple providers, including SMTP, AWS SES, Mailgun, Postmark, and SendGrid.
 
