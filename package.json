@@ -19,7 +19,7 @@
       "prettier --write"
     ],
     "**/*.{html,json,css,scss,md,mdx}": [
-      "prettier -w"
+      "prettier --write"
     ]
   },
   "homepage": "https://github.com/lijukrks/flexi-mailer#readme",
